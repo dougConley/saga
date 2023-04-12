@@ -517,6 +517,7 @@ class resist11
 					$bean->enlargement_of_ntl4_c = $muestra['enlargement_of_ntl4_c'];
 					$bean->enlargement_of_ntl5_c = $muestra['enlargement_of_ntl5_c'];
           }
+	  $bean->save();
           
           // salto a vista del resist.
           $params = array(
