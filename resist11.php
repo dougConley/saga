@@ -438,35 +438,7 @@ class resist11
                                 r11.enlargement_of_ntl1,
                                 r11.enlargement_of_ntl2,
                                 rrc.enlargement_of_ntl4_c,
-                                rrc.enlargement_of_ntl5_c,
-
-
-
-
-                                r11.suma_total,
-
-                                r11.tumor_markers,
-                                r11.valor_marcador_tumoral as tumor_markers_valor,
-
-                                r11.n_lesiones_no_objetivo as n_lesiones_no_objetivo_1,
-                                r11.n_lesiones_no_objetivo_1 as n_lesiones_no_objetivo_2,
-                                r11.n_lesiones_no_objetivo_2 as n_lesiones_no_objetivo_3,
-
-                                r11.tipo_ntl_1 as tipo_ntl_1,
-                                r11.tipo_ntl_2 as tipo_ntl_2,
-                                r11.tipo_ntl_3 as tipo_ntl_3,
-
-                                r11.fecha_estudio_ntl1 as fecha_estudio_ntl_1,
-                                r11.fecha_estudio_ntl2 as fecha_estudio_ntl_2,
-                                r11.fecha_estudio_ntl3 as fecha_estudio_ntl_3,
-
-                                r11.tipo_estudio_ntl_1,
-                                r11.tipo_estudio_ntl_2,
-                                r11.tipo_estudio_ntl_3,
-
-                                r11.enlargement_of_ntl as enlargement_of_ntl_l,
-                                r11.enlargement_of_ntl1 as enlargement_of_ntl_2,
-                                r11.enlargement_of_ntl2 as enlargement_of_ntl_3
+                                rrc.enlargement_of_ntl5_c
 
                         from
                                 {$tabla_interna}_r11_resist11_1_c rrc
@@ -529,10 +501,30 @@ class resist11
 					$bean->organo_nt_3_c = $muestra['organo_nt_3_c'];
 					$bean->organo_nt_4_c = $muestra['organo_nt_4_c'];
 					$bean->organo_nt_5_c = $muestra['organo_nt_5_c'];
-					$bean->__ = $muestra[''];
-					$bean->__ = $muestra[''];
+					$bean->lesion_preta_empeoram_1_c = $muestra['lesion_preta_empeoram_1_c'];
+					$bean->lesion_preta_empeoram_2_c = $muestra['lesion_preta_empeoram_2_c'];
+					$bean->lesion_preta_empeoram_3_c = $muestra['lesion_preta_empeoram_3_c'];
+					$bean->lesion_preta_empeoram_4_c = $muestra['lesion_preta_empeoram_4_c'];
+					$bean->lesion_preta_empeoram_5_c = $muestra['lesion_preta_empeoram_5_c'];
+					$bean->lesion_no_target_1_c = $muestra['lesion_no_target_1_c'];
+					$bean->lesion_no_target_2_c = $muestra['lesion_no_target_2_c'];
+					$bean->lesion_no_target_3_c = $muestra['lesion_no_target_3_c'];
+					$bean->lesion_no_target_4_c = $muestra['lesion_no_target_4_c'];
+					$bean->lesion_no_target_5_c = $muestra['lesion_no_target_5_c'];
+					$bean->enlargement_of_ntl = $muestra['enlargement_of_ntl'];
+					$bean->enlargement_of_ntl1 = $muestra['enlargement_of_ntl1'];
+					$bean->enlargement_of_ntl2 = $muestra['enlargement_of_ntl2'];
+					$bean->enlargement_of_ntl4_c = $muestra['enlargement_of_ntl4_c'];
+					$bean->enlargement_of_ntl5_c = $muestra['enlargement_of_ntl5_c'];
           }
-
+          
+          // salto a vista del resist.
+          $params = array(
+                  'module'=> 'R11_Resist11',
+                  'action'=>'EditView', 
+                  'record' => $beanID
+                );
+        SugarApplication::redirect('index.php?' . http_build_query($params));
 
         
         }
